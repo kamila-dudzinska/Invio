@@ -35,11 +35,14 @@ Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
 Tabela z zamówieniami:
 
+
 <img width="1512" height="196" alt="image" src="https://github.com/user-attachments/assets/6024f8b9-1ab1-4cd7-8052-193fe168e2dd" />
+
 
 Tabela z fakturami:
 
 <img width="1423" height="197" alt="image" src="https://github.com/user-attachments/assets/6ade4b18-40b5-4368-856c-6c36ad083c38" />
+
 
 Fragmenty kodu:
 
@@ -49,10 +52,12 @@ Fragmenty kodu:
 
 <img width="788" height="356" alt="image" src="https://github.com/user-attachments/assets/5a1bf282-d0c8-4962-a568-f6e8160cd111" />
 
+
 Email do buyera:
 
 
 <img width="888" height="342" alt="image" src="https://github.com/user-attachments/assets/b2ded9d4-fd11-4dc0-b1a2-a11e3bf0254d" />
+
 
 Statystyki dla administratora:
 
