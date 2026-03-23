@@ -1,0 +1,9 @@
+pandas
+pywin32
+reportlab
+
+
+
+
+
+
