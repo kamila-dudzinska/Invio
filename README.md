@@ -34,10 +34,10 @@ Kod: cały kod znajduje się w osobnym pliku
 Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
 Tabela z zamówieniami:
-
+uzupełnić po porawce
 
 Tabela z fakturami:
-
+uzupełnić po poprawce
 
 
 Fragmenty kodu:
@@ -50,15 +50,11 @@ Fragmenty kodu:
 
 
 Email do buyera:
-
-
-<img width="888" height="342" alt="image" src="https://github.com/user-attachments/assets/b2ded9d4-fd11-4dc0-b1a2-a11e3bf0254d" />
+uzupełnić po poprawce
 
 
 Statystyki dla administratora:
-
-<img width="763" height="458" alt="image" src="https://github.com/user-attachments/assets/1eeee929-e497-48b1-91e9-a46b7bfc5d8a" />
-
+uzupełnić po poprawce
 
 
 
