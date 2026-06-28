@@ -17,7 +17,7 @@ from reportlab.pdfgen import canvas
 
 
 # wczytywanie pliku excel
-file_path = "C:\\Users\\lila_\\Desktop\\Github - moje projekty\\PO_status.xlsx"
+file_path = "PO_status.xlsx"
 df_ariba = pd.read_excel(file_path, sheet_name="Ariba")
 df_invoices = pd.read_excel(file_path, "Faktury")
 
@@ -134,7 +134,7 @@ percentage_received = divide_z(b, suma) *100
 # czesc adminowa
 
 #tworzenie nowego pliku pdf
-pdf_file = os.path.abspath("C:\\Users\\lila_\\Desktop\\Statistics.pdf")
+pdf_file = os.path.abspath("Statistics.pdf")
 
 c=canvas.Canvas(pdf_file, pagesize=A4)
 
