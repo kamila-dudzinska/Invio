@@ -52,6 +52,7 @@ Fragmenty kodu:
 
 
 Email do buyera:
+
 ![buyer email](email_buyer.png)
 
 
