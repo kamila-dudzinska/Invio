@@ -1,0 +1,61 @@
+﻿PO Number;Company Code;Supplier ID;Supplier Name;Requester ID;Requester Name;Requester Mail;Create Date;Delivery Date;Invoice Date;Invoice Status;Amount;Currency;Payment Terms
+6000116739;A001;2009917711;Vanguard;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-01-29;2026-02-03;2026-02-26;paid;18936;EUR;23
+6000619176;F003;2009183340;Januszex sp. z o. o.;PLANNMAC;Anna Maciejewska;anna.maciejewska@firma.com;2026-01-12;2026-01-19;2026-02-27;paid;4257;PLN;39
+6000681453;F003;2007745510;Everest Supplies;PLMAPAW;Magdalena Pawlak;magdalena.pawlak@firma.com;2026-03-17;2026-03-26;2026-04-05;vouched;15575;EUR;10
+6000163032;D001;2007741199;Echo;PLPIWONO;Piotr Wozniak;piotr.wozniak@firma.com;2026-01-12;2026-01-25;2026-02-16;pending approval;39783;EUR;22
+6000846335;A002;2007748822;EverGreen sp. z o. o.;PLGRWRO;Grzegorz Wrona;grzegorz.wrona@firma.com;2026-01-16;2026-02-15;2026-04-14;entered;6925;GBP;58
+6000201629;B001;2007745128;Tech Solutions;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-04-09;2026-04-19;2026-05-09;vouched;32456;EUR;20
+6000475435;F001;2009910044;Fischer GmbH;PLLUKAM;Łukasz Kamiński;lukasz.kaminski@firma.com;2026-02-15;2026-02-22;2026-04-07;paid;52340;GBP;44
+6000665822;CH02;2008826611;CloudNine sp. z o. o.;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-01-21;2026-02-05;2026-04-04;hold;79126;EUR;58
+6000717870;N001;2003374920;Fast Logistics;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-04-16;2026-04-18;2026-06-07;approved;216;GBP;50
+6000918938;N001;2003390041;Visionary Ltd.;PLMARKRA;Marcin Krawczyk;marcin.krawczyk@firma.com;2026-02-20;2026-03-21;2026-05-28;vouched;252;PLN;68
+6000588637;D003;2005578822;Fischer GmbH;PLJADUD;Jakub Duda;jakub.duda@firma.com;2026-04-25;2026-05-14;2026-07-14;pending approval;141;CHF;61
+6000517488;B001;2006629183;Green Energy;PLPIWONO;Piotr Wozniak;piotr.wozniak@firma.com;2026-01-20;2026-02-10;2026-03-12;paid;2040;EUR;30
+6000400156;S001;2005597744;StormRider sp. z o. o.;PLMOLEW;Monika Lewandowska;monika.lewandowska@firma.com;2026-03-12;2026-04-09;2026-04-20;paid;18798;PLN;11
+6000279786;N001;2006291180;Sunrise Corp;PLPAKAC;Paweł Kaczmarek;pawel.kaczmarek@firma.com;2026-02-25;2026-03-03;2026-05-10;entered;58631;CHF;68
+6000798975;CH02;2009913310;BlueHorizon sp. z o. o.;PLPIWONO;Piotr Wozniak;piotr.wozniak@firma.com;2026-04-22;2026-05-13;2026-06-30;paid;4258;EUR;48
+6000392077;CH02;2006618822;BrightPath sp. z o. o.;PLBANO;Barbara Nowicka;barbara.nowicka@firma.com;2026-04-28;2026-04-29;2026-07-24;hold;2832;EUR;86
+6000921406;D004;2005579912;Ironclad;PLJANNOW;Jan Nowak;jan.nowak@firma.com;2026-01-31;2026-03-01;2026-05-22;entered;497;EUR;82
+6000797549;CH01;2008894412;Bauhaus AG;PLMARKRA;Marcin Krawczyk;marcin.krawczyk@firma.com;2026-03-12;2026-03-18;2026-04-30;paid;33866;EUR;43
+6000974036;D001;2008826612;Zenith;PLNASZY;Natalia Szymańska;natalia.szymanska@firma.com;2026-03-27;2026-04-17;2026-06-13;approved;64795;EUR;57
+6000259947;D002;2008457712;Alpha Systems;PLKIWOJ;Kinga Wójcik;kinga.wojcik@firma.com;2026-01-03;2026-01-22;2026-04-12;vouched;1117;EUR;80
+6000742225;A002;2006620033;BlueSky;PLEWAZIE;Ewa Zielinska;ewa.zielinska@firma.com;2026-04-26;2026-04-28;2026-06-19;entered;5562;PLN;52
+6000508993;D001;2006618822;BrightPath sp. z o. o.;PLKAMAZU;Katarzyna Mazur;katarzyna.mazur@firma.com;2026-04-03;2026-05-03;2026-07-25;paid;8749;EUR;83
+6000199659;B002;2007139044;Bright Future;PLJADUD;Jakub Duda;jakub.duda@firma.com;2026-02-15;2026-03-01;2026-05-02;selected;21776;PLN;62
+6000685197;B002;2003374920;Fast Logistics;PLNASZY;Natalia Szymańska;natalia.szymanska@firma.com;2026-04-04;2026-04-15;2026-05-08;vouched;549;EUR;23
+6000146991;F003;2005591188;Urban Solutions;PLMOLEW;Monika Lewandowska;monika.lewandowska@firma.com;2026-03-01;2026-03-09;2026-03-28;approved;19017;EUR;19
+6000053045;A001;2004412870;NextGen;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-01-22;2026-02-05;2026-04-18;selected;410;EUR;72
+6000172634;F002;2004839201;Adecco sp. z o. o.;PLNASZY;Natalia Szymańska;natalia.szymanska@firma.com;2026-02-03;2026-03-05;2026-05-12;hold;8973;EUR;68
+6000199122;D004;2003390041;Visionary Ltd.;PLJANNOW;Jan Nowak;jan.nowak@firma.com;2026-03-16;2026-04-09;2026-06-27;entered;10937;EUR;79
+6000612554;S002;2009913310;BlueHorizon sp. z o. o.;PLBANO;Barbara Nowicka;barbara.nowicka@firma.com;2026-01-21;2026-01-23;2026-04-08;entered;22246;GBP;75
+6000071262;D002;2001137740;Vortex;PLPIWONO;Piotr Wozniak;piotr.wozniak@firma.com;2026-04-24;2026-05-13;2026-06-23;paid;2343;EUR;41
+6000689305;N001;2006675519;Falcon;PLAGNNO;Agnieszka Nowak;agnieszka.nowak@firma.com;2026-03-27;2026-04-19;2026-06-08;vouched;134;PLN;50
+6000676856;D004;2007748822;EverGreen sp. z o. o.;PLKIWOJ;Kinga Wójcik;kinga.wojcik@firma.com;2026-04-29;2026-05-24;2026-06-12;entered;2638;EUR;19
+6000563750;D001;2009913310;BlueHorizon sp. z o. o.;PLMOLEW;Monika Lewandowska;monika.lewandowska@firma.com;2026-01-17;2026-02-16;2026-04-11;entered;62109;EUR;54
+6000165409;S001;2006618822;BrightPath sp. z o. o.;PLPAKAC;Paweł Kaczmarek;pawel.kaczmarek@firma.com;2026-03-20;2026-04-15;2026-07-01;entered;5905;PLN;77
+6000108618;CH01;2006675519;Falcon;PLPIWONO;Piotr Wozniak;piotr.wozniak@firma.com;2026-04-24;2026-04-28;2026-07-17;vouched;619;EUR;80
+6000752470;N001;2004477129;Quantum Corp;PLMOLEW;Monika Lewandowska;monika.lewandowska@firma.com;2026-03-06;2026-03-22;2026-05-03;entered;433;EUR;42
+6000046228;A001;2003398821;Nimbus;PLKAMAZU;Katarzyna Mazur;katarzyna.mazur@firma.com;2026-03-23;2026-04-01;2026-05-01;canceled;8007;CHF;30
+6000010139;B002;2001183499;Blue Ocean;PLKAMAZU;Katarzyna Mazur;katarzyna.mazur@firma.com;2026-03-11;2026-03-13;2026-05-09;paid;8041;EUR;57
+6000043860;D004;2008896612;Celestial;PLJANNOW;Jan Nowak;jan.nowak@firma.com;2026-04-26;2026-05-08;2026-06-13;paid;105;EUR;36
+6000818011;F003;2009918822;Delta SA;PLKAMAZU;Katarzyna Mazur;katarzyna.mazur@firma.com;2026-04-29;2026-05-29;2026-07-08;vouched;72901;EUR;40
+6000025990;CH02;2003398821;Nimbus;PLJADUD;Jakub Duda;jakub.duda@firma.com;2026-04-13;2026-05-05;2026-06-15;hold;718;EUR;41
+6000401124;A002;2005577741;Oceanic sp. z o. o.;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-01-26;2026-02-22;2026-05-01;hold;814;EUR;68
+6000233752;A001;2008823410;Pioneer Co.;PLNASZY;Natalia Szymańska;natalia.szymanska@firma.com;2026-02-12;2026-02-21;2026-03-11;hold;521;EUR;18
+6000712526;N001;2002846619;Pedro;PLPIWONO;Piotr Wozniak;piotr.wozniak@firma.com;2026-04-23;2026-05-02;2026-06-03;paid;58699;EUR;32
+6000113668;F003;2006627740;Solstice;PLKIWOJ;Kinga Wójcik;kinga.wojcik@firma.com;2026-02-25;2026-03-17;2026-05-31;entered;590;EUR;75
+6000267095;A002;2006615512;NextLevel sp. z o. o.;PLANNMAC;Anna Maciejewska;anna.maciejewska@firma.com;2026-03-08;2026-04-07;2026-06-24;paid;13229;EUR;78
+6000452248;B001;2003398821;Nimbus;PLDASZA;Dariusz Zając;dariusz.zajac@firma.com;2026-02-10;2026-03-04;2026-03-29;paid;66618;EUR;25
+6000699287;F003;2004475510;Stratus;PLNASZY;Natalia Szymańska;natalia.szymanska@firma.com;2026-03-31;2026-04-10;2026-06-29;vouched;680;EUR;80
+6000710219;CH02;2002246611;Cobra SA;PLJOLIS;Joanna Lis;joanna.lis@firma.com;2026-02-08;2026-02-21;2026-05-12;entered;215;EUR;80
+6000823927;N001;2006623310;MountainPeak sp. z o. o.;PLMAPAW;Magdalena Pawlak;magdalena.pawlak@firma.com;2026-02-26;2026-03-20;2026-04-26;paid;3780;PLN;37
+6000088914;D004;2001137741;Sunset sp. z o. o.;PLDASZA;Dariusz Zając;dariusz.zajac@firma.com;2026-02-12;2026-02-15;2026-03-27;paid;825;EUR;40
+6000154511;A001;2007745128;Tech Solutions;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-03-02;2026-03-22;2026-04-10;approved;644;GBP;19
+6000203880;F002;2002248822;TrueNorth sp. z o. o.;PLNASZY;Natalia Szymańska;natalia.szymanska@firma.com;2026-02-01;2026-02-06;2026-02-16;entered;13586;EUR;10
+6000843170;S001;2006629183;Green Energy;PLGRWRO;Grzegorz Wrona;grzegorz.wrona@firma.com;2026-02-01;2026-03-03;2026-03-28;approved;475;PLN;25
+6000556932;N001;2004477744;BrightStar sp. z o. o.;PLDASZA;Dariusz Zając;dariusz.zajac@firma.com;2026-04-15;2026-05-09;2026-07-22;approved;37953;EUR;74
+6000940790;CH02;2005577741;Oceanic sp. z o. o.;PLMAPAW;Magdalena Pawlak;magdalena.pawlak@firma.com;2026-02-03;2026-02-28;2026-04-10;paid;796;CHF;41
+6000508136;D002;2009917711;Vanguard;PLMAPAW;Magdalena Pawlak;magdalena.pawlak@firma.com;2026-01-10;2026-02-02;2026-03-20;vouched;327;CHF;46
+6000084491;CH01;2002245190;Weber AG;PLTOZIE;Tomasz Zieliński;tomasz.zielinski@firma.com;2026-02-19;2026-03-14;2026-04-12;paid;424;EUR;29
+6000346954;S001;2005596610;IronGate sp. z o. o.;PLJANNOW;Jan Nowak;jan.nowak@firma.com;2026-01-27;2026-02-23;2026-04-27;pending approval;69140;PLN;63
+6000020480;F002;2008895512;SilverStone sp. z o. o.;PLANNMAC;Anna Maciejewska;anna.maciejewska@firma.com;2026-02-15;2026-02-25;2026-04-25;approved;9947;GBP;59
