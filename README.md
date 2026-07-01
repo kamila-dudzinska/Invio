@@ -52,7 +52,7 @@ Fragmenty kodu:
 
 
 Email do buyera:
-uzupełnić po poprawce
+![buyer email](email_buyer.png)
 
 
 Email dla administratora:
