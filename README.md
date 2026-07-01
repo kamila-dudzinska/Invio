@@ -56,7 +56,7 @@ uzupełnić po poprawce
 
 
 Email dla administratora:
-![admin email](email_admin)
+![admin email](email_admin.png)
 
 
 
