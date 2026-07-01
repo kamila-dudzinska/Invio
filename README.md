@@ -7,9 +7,10 @@ Autor: Kamila Dudzińska
 Projekt: Program 'Invio' do automatyzacji maili 
 	 dedykowany dla procesów operacyjnych dla działu zakupów (Procurement)
 
-Źródło: sama wygenerowałam próbkę danych na potrzeby spr. automatyzacji
+Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu - 
 
 IDE: Python, Pandas, Excel, Outlook
+Modules: pandas, win32com, datetime, reportlab, random
 
 Cel: Stworzenie programu do analizy tabeli excel z danymi o zamówieniach w systemie CORA (invoicing) oraz automatycznego wysyłania maili do kupców z prośbą o wyjaśnienie różnic kwot netto pomiędzy zamówieniem (PO), a otrzymana fakturą. Program generuje też raport dla administratora, do kogo maile zostały wysłane i jakie są statystyki zamówień. Dzięki temu można jednym kliknięciem zaoszczędzić sporo FTE, a administrator może szybko uzyskać realny "stan rzeczy".
 
@@ -29,7 +30,8 @@ Zalety projektu:
 --> program napisany pod typowe środowisko korporacyjne z zalogowanym "Outlookiem"
 --> program dedykowany SAP, ale można go szybko dopasować do innych systemów - wystarczy przeanalizować raporty generowane przez dowolny inny program.
 
-Kod: cały kod znajduje się w osobnym pliku
+Kod: w pliku invio_g.py
+Kod do skryptu do generowania danych procurementowych: dataset_mock_invio.py i modul wspierajacy procurement_mock_functions
 
 Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
@@ -53,9 +55,8 @@ Email do buyera:
 uzupełnić po poprawce
 
 
-Statystyki dla administratora:
-uzupełnić po poprawce
-
+Email dla administratora:
+![admin email](email_admin)
 
 
 
