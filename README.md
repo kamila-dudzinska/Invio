@@ -56,6 +56,7 @@ Charts with purchase orders:
 
 ![zamowienia](po_invio.png)
 
+
 Chart with invioices:
 
 ![faktury](invoices_invio.png)
@@ -73,6 +74,7 @@ Code:
 
 
 
+
 Email to buyer:
 
 ![buyer email](email_buyer.png)
@@ -80,13 +82,10 @@ Email to buyer:
 
 
 
+
 Email to administrator:
 
 ![admin email](email_admin.png)
-
-
-
-
 
 
 
@@ -149,6 +148,7 @@ Tabela z zamówieniami:
 
 ![zamowienia](po_invio.png)
 
+
 Tabela z fakturami:
 
 ![faktury](invoices_invio.png)
@@ -161,7 +161,9 @@ Fragmenty kodu:
 
 
 
+
 <img width="788" height="356" alt="image" src="https://github.com/user-attachments/assets/5a1bf282-d0c8-4962-a568-f6e8160cd111" />
+
 
 
 
@@ -173,10 +175,12 @@ Email do buyera:
 
 
 
+
 Email dla administratora:
 
 
 ![admin email](email_admin.png)
+
 
 
 
