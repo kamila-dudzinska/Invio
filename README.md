@@ -1,28 +1,26 @@
-# Invio
+#Invio
 
-Program do usprawnienia procesu Price Missmatch w dziale AP
-
+⚙️ Program „Invio” — Automatyzacja procesu Price Mismatch w dziale AP
 Autor: Kamila Dudzińska
-
-Projekt: Program 'Invio' do automatyzacji maili 
-	 dedykowany dla procesów operacyjnych dla działu zakupów (Procurement)
-
-Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu - 
-
-IDE: Python, Pandas, Excel, Outlook
-Modules: pandas, win32com, datetime, reportlab, random
-
-Cel: Stworzenie programu do analizy tabeli excel z danymi o zamówieniach w systemie CORA (invoicing) oraz automatycznego wysyłania maili do kupców z prośbą o wyjaśnienie różnic kwot netto pomiędzy zamówieniem (PO), a otrzymana fakturą. Program generuje też raport dla administratora, do kogo maile zostały wysłane i jakie są statystyki zamówień. Dzięki temu można jednym kliknięciem zaoszczędzić sporo FTE, a administrator może szybko uzyskać realny "stan rzeczy".
+Obszar: Procurement / Accounts Payable (AP)
+Technologie: Python, Pandas, Outlook, Excel
+Moduły: pandas, win32com, datetime, reportlab, random# Invio
+Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu "dataset_mock_invio.py"
 
 
-Jak działa program:
+🎯 Cel projektu
+Program Invio automatyzuje analizę danych zakupowych oraz wysyłkę maili dotyczących różnic kwot netto (Price Mismatch) pomiędzy zamówieniem (PO) a fakturą w systemie CORA/Ariba.
+Narzędzie eliminuje konieczność ręcznego sprawdzania setek pozycji i wysyłania follow‑upów do kupców, co pozwala zaoszczędzić znaczną liczbę FTE oraz przyspiesza proces wyjaśniania niezgodności.
+
+
+💱 Jak działa program: 
+Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i wartości netto.
 1. Program iteruje wiersz po wierszu w tabeli za zamówieniami i porównuje dane z raportem z tabeli z fakturami.
-2.Jeśli znajdzie zamówienie (PO) ze statusem "received" ("otrzymane") w raporcie "Ariba" oraz ze statusem
-"hold" w tabeli "Faktury" to sprawdzi dodatkowo kwoty netto.
+2.Jeśli znajdzie zamówienie (PO) ze statusem "received" ("otrzymane") w raporcie "Ariba" oraz ze statusem"hold" w tabeli "Faktury" to sprawdzi dodatkowo kwoty netto.
 3. Jeżeli różnica kwot netto będzie większa niż 20 EUR lub 5% wartości zamówienia to program wyśle maila do kupca z prośbą o wyjaśnienie różnic.
-4. Po wykonaniu zadania program poinformuje administratora, gdzie udało mu się wysłać maila - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora. 
+4. Po wykonaniu zadania program poinformuje administratora, ile maili zostało wysłanych - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora. 
 
-Zalety projektu:
+🚀 Zalety projektu:
 --> odpowiada na realny problem w wielu procesach operacyjnych, gdzie wymagane jest sprawdzanie i repetetywne wysyłanie przypominajek/follow-upów
 --> zmniejsza problem z wyjaśnianiem price missmatch (różnic cenowych) i przyczynia się do redukcji zaległych faktur (invoice overdue) i zminimalizować ryzyko kłopotów z dostawcami, czy utraty wizerunku
 --> administrator programu otrzymuje statystyki, dzięki czemu łatwiej kontrolować proces Price Missmatch
@@ -30,8 +28,12 @@ Zalety projektu:
 --> program napisany pod typowe środowisko korporacyjne z zalogowanym "Outlookiem"
 --> program dedykowany SAP, ale można go szybko dopasować do innych systemów - wystarczy przeanalizować raporty generowane przez dowolny inny program.
 
-Kod: w pliku invio_g.py
-Kod do skryptu do generowania danych procurementowych: dataset_mock_invio.py i modul wspierajacy procurement_mock_functions
+🗂️ Struktura projektu
+invio_g.py — główny program automatyzujący analizę i wysyłkę maili
+
+dataset_mock_invio.py — generator danych do testów
+
+procurement_mock_functions.py — moduł wspierający logikę danych
 
 Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
