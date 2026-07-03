@@ -1,5 +1,6 @@
 # Invio
 
+
 ⚙️ Program „Invio” — Automatyzacja procesu Price Mismatch w dziale AP
 Autor: Kamila Dudzińska
 Obszar: Procurement / Accounts Payable (AP)
@@ -8,9 +9,11 @@ Moduły: pandas, win32com, datetime, reportlab, random# Invio
 Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu "dataset_mock_invio.py"
 
 
+
 🎯 Cel projektu
 Program Invio automatyzuje analizę danych zakupowych oraz wysyłkę maili dotyczących różnic kwot netto (Price Mismatch) pomiędzy zamówieniem (PO) a fakturą w systemie CORA/Ariba.
 Narzędzie eliminuje konieczność ręcznego sprawdzania setek pozycji i wysyłania follow‑upów do kupców, co pozwala zaoszczędzić znaczną liczbę FTE oraz przyspiesza proces wyjaśniania niezgodności.
+
 
 
 💱 Jak działa program: 
@@ -20,6 +23,7 @@ Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i
 3. Jeżeli różnica kwot netto będzie większa niż 20 EUR lub 5% wartości zamówienia to program wyśle maila do kupca z prośbą o wyjaśnienie różnic. 
 4. Po wykonaniu zadania program poinformuje administratora, ile maili zostało wysłanych - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora.
    
+
 
 🚀 Zalety projektu:
 
@@ -37,13 +41,16 @@ Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i
 
 
 🗂️ Struktura projektu
-invio_g.py — główny program automatyzujący analizę i wysyłkę maili
 
-dataset_mock_invio.py — generator danych do testów
+-->invio_g.py — główny program automatyzujący analizę i wysyłkę maili
 
-procurement_mock_functions.py — moduł wspierający logikę danych
+-->dataset_mock_invio.py — generator danych do testów
+
+-->procurement_mock_functions.py — moduł wspierający logikę danych
+
 
 Przykładowe fragmenty kodu oraz screen z maila i raportów.
+
 
 Tabela z zamówieniami:
 ![zamowienia](po_invio.png)
