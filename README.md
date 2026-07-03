@@ -13,12 +13,8 @@ Technologies: Python, Pandas, Outlook, Excel
 
 Modules: pandas, win32com, datetime, reportlab, random
 
-
-
-
-Invio
-
 Source: procurement_mock_dataset_invio.xlsx — created based on my own script “dataset_mock_invio.py”
+
 
 
 
@@ -69,6 +65,13 @@ After completing the task, the program informs the administrator how many emails
 --> procurement_mock_functions.py — module supporting data logic
 
 
+📦 How to run?
+
+In the cataloque:
+
+pip install pandas reportlab pywin32
+
+
 Sample code fragments and screenshots of emails and reports.
 
 
@@ -107,6 +110,14 @@ Email to administrator:
 
 ![admin email](email_admin.png)
 
+<hr style="border:3px solid #AEC6CF;">
+### 📧 Kontakt
+
+Kamila Dudzińska
+
+📧 kamila.dudzinska@onet.pl 
+
+
 
 
 ------------------------------------POLISH VERSION-------------------------------------------------------------
@@ -125,6 +136,11 @@ Moduły: pandas, win32com, datetime, reportlab, random# Invio
 Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu "dataset_mock_invio.py"
 
 
+📁 Jak uruchomić?
+
+Sklonuj repozytorium.
+Zainstaluj moduły pip install -r requirements.txt
+Uruchom skrypt
 
 
 🎯 Cel projektu
@@ -173,6 +189,22 @@ Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i
 -->procurement_mock_functions.py — moduł wspierający logikę danych
 
 
+⚙️ Instalacja i uruchomienie
+
+🔧 Wymagania
+
+Python 3.10+
+
+Zainstalowany Outlook (dla wysyłki maili) oraz opcjonalnie Excel do odczytu csv
+
+Biblioteki: pandas, reportlab, win32com, os, datetime
+
+
+📦 Instalacja
+
+W katalogu projektu uruchom:
+
+pip install pandas reportlab pywin32
 
 
 Przykładowe fragmenty kodu oraz screen z maila i raportów.
@@ -216,7 +248,12 @@ Email dla administratora:
 ![admin email](email_admin.png)
 
 
+<hr style="border:3px solid #AEC6CF;">
+### 📧 Kontakt
 
+Kamila Dudzińska
+
+📧 kamila.dudzinska@onet.pl 
 
 
 
