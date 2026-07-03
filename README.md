@@ -72,6 +72,7 @@ Email to administrator:
 
 
 
+
 ------------------------------------POLISH VERSION-------------------------------------------------------------
 
 
@@ -146,7 +147,10 @@ Email do buyera:
 
 
 Email dla administratora:
+
 ![admin email](email_admin.png)
+
+
 
 
 
