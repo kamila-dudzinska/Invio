@@ -14,19 +14,31 @@ Narzędzie eliminuje konieczność ręcznego sprawdzania setek pozycji i wysyła
 
 
 💱 Jak działa program: 
+
 Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i wartości netto.
+
 1. Program iteruje wiersz po wierszu w tabeli za zamówieniami i porównuje dane z raportem z tabeli z fakturami.
+   
 2.Jeśli znajdzie zamówienie (PO) ze statusem "received" ("otrzymane") w raporcie "Ariba" oraz ze statusem"hold" w tabeli "Faktury" to sprawdzi dodatkowo kwoty netto.
-3. Jeżeli różnica kwot netto będzie większa niż 20 EUR lub 5% wartości zamówienia to program wyśle maila do kupca z prośbą o wyjaśnienie różnic.
-4. Po wykonaniu zadania program poinformuje administratora, ile maili zostało wysłanych - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora. 
+
+4. Jeżeli różnica kwot netto będzie większa niż 20 EUR lub 5% wartości zamówienia to program wyśle maila do kupca z prośbą o wyjaśnienie różnic.
+   
+6. Po wykonaniu zadania program poinformuje administratora, ile maili zostało wysłanych - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora.
+   
 
 🚀 Zalety projektu:
 --> odpowiada na realny problem w wielu procesach operacyjnych, gdzie wymagane jest sprawdzanie i repetetywne wysyłanie przypominajek/follow-upów
+
 --> zmniejsza problem z wyjaśnianiem price missmatch (różnic cenowych) i przyczynia się do redukcji zaległych faktur (invoice overdue) i zminimalizować ryzyko kłopotów z dostawcami, czy utraty wizerunku
+
 --> administrator programu otrzymuje statystyki, dzięki czemu łatwiej kontrolować proces Price Missmatch
+
 --> program automatyzuje pracę w obrębie działu zakupów/AP
+
 --> program napisany pod typowe środowisko korporacyjne z zalogowanym "Outlookiem"
+
 --> program dedykowany SAP, ale można go szybko dopasować do innych systemów - wystarczy przeanalizować raporty generowane przez dowolny inny program.
+
 
 🗂️ Struktura projektu
 invio_g.py — główny program automatyzujący analizę i wysyłkę maili
@@ -38,10 +50,10 @@ procurement_mock_functions.py — moduł wspierający logikę danych
 Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
 Tabela z zamówieniami:
-uzupełnić po porawce
+![zamowienia](po_invio.png)
 
 Tabela z fakturami:
-uzupełnić po poprawce
+![faktury](invoices_invio.png)
 
 
 Fragmenty kodu:
