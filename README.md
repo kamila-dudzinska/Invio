@@ -56,8 +56,8 @@ Tabela z fakturami:
 
 
 Fragmenty kodu:
-
 <img width="621" height="257" alt="image" src="https://github.com/user-attachments/assets/78fd50f9-c48c-4ed1-9b90-2cb651b777c5" />
+
 
 
 
@@ -65,14 +65,14 @@ Fragmenty kodu:
 
 
 
-Email do buyera:
 
+Email do buyera:
 ![buyer email](email_buyer.png)
 
 
 
-Email dla administratora:
 
+Email dla administratora:
 ![admin email](email_admin.png)
 
 
