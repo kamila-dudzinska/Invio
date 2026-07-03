@@ -43,13 +43,16 @@ After completing the task, the program informs the administrator how many emails
 Sample code fragments and screenshots of emails and reports.
 
 Charts with purchase orders:
+
 ![zamowienia](po_invio.png)
 
 Chart with invioices:
+
 ![faktury](invoices_invio.png)
 
 
 Code:
+
 <img width="621" height="257" alt="image" src="https://github.com/user-attachments/assets/78fd50f9-c48c-4ed1-9b90-2cb651b777c5" />
 
 
@@ -61,13 +64,17 @@ Code:
 
 
 Email to buyer:
+
 ![buyer email](email_buyer.png)
 
 
 
 
 Email to administrator:
+
 ![admin email](email_admin.png)
+
+
 
 
 
@@ -123,13 +130,16 @@ Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
 
 Tabela z zamówieniami:
+
 ![zamowienia](po_invio.png)
 
 Tabela z fakturami:
+
 ![faktury](invoices_invio.png)
 
 
 Fragmenty kodu:
+
 <img width="621" height="257" alt="image" src="https://github.com/user-attachments/assets/78fd50f9-c48c-4ed1-9b90-2cb651b777c5" />
 
 
@@ -141,12 +151,14 @@ Fragmenty kodu:
 
 
 Email do buyera:
+
 ![buyer email](email_buyer.png)
 
 
 
 
 Email dla administratora:
+
 
 ![admin email](email_admin.png)
 
