@@ -250,9 +250,9 @@ Email dla administratora:
 
 <hr style="border:3px solid #AEC6CF;">
 ### Email administratora:
+
 ![Email to Admin](admin_email.png)
 
-<hr style="border:3px solid #AEC6CF;">
 ### 📧 Kontakt --> Kamila Dudzińska
 
 
