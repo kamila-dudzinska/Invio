@@ -249,11 +249,11 @@ Email dla administratora:
 
 
 <hr style="border:3px solid #AEC6CF;">
-### 📧 Kontakt
+### Email administratora:
+![Email to Admin](admin_email.png)
 
-Kamila Dudzińska
-
-📧 kamila.dudzinska@onet.pl 
+<hr style="border:3px solid #AEC6CF;">
+### 📧 Kontakt --> Kamila Dudzińska
 
 
 
