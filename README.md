@@ -85,12 +85,11 @@ Chart with invioices:
 
 Code:
 
-<img width="621" height="257" alt="image" src="https://github.com/user-attachments/assets/78fd50f9-c48c-4ed1-9b90-2cb651b777c5" />
+![data_cleaning](invio_data.png)
 
 
 
-
-<img width="788" height="356" alt="image" src="https://github.com/user-attachments/assets/5a1bf282-d0c8-4962-a568-f6e8160cd111" />
+![main](main_main.png)
 
 
 
@@ -106,7 +105,7 @@ Email to buyer:
 
 Email to administrator:
 
-![admin email](email_admin.png)
+![admin email](invio_admin.png)
 
 <hr style="border:3px solid #AEC6CF;">
 ### Kontakt:  
@@ -221,13 +220,11 @@ Tabela z fakturami:
 
 Fragmenty kodu:
 
-<img width="621" height="257" alt="image" src="https://github.com/user-attachments/assets/78fd50f9-c48c-4ed1-9b90-2cb651b777c5" />
+![data_cleaning](invio_data.png)
 
 
 
-
-
-<img width="788" height="356" alt="image" src="https://github.com/user-attachments/assets/5a1bf282-d0c8-4962-a568-f6e8160cd111" />
+![main](main_main.png)
 
 
 
@@ -244,7 +241,7 @@ Email do buyera:
 Email dla administratora:
 
 
-![admin email](email_admin.png)
+![admin email](invio_admin.png)
 
 
 
