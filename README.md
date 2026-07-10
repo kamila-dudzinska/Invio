@@ -89,7 +89,7 @@ Code:
 
 
 
-![main](main_main.png)
+![main](images/invio_main.png)
 
 
 
@@ -224,7 +224,7 @@ Fragmenty kodu:
 
 
 
-![main](images/main_main.png)
+![main](images/invio_main.png)
 
 
 
