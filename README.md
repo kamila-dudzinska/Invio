@@ -105,7 +105,7 @@ Email to buyer:
 
 Email to administrator:
 
-![admin email](images/invio_admin.png)
+![admin email](images/invio_adm.png)
 
 <hr style="border:3px solid #AEC6CF;">
 ### Kontakt:  
@@ -241,7 +241,7 @@ Email do buyera:
 Email dla administratora:
 
 
-![admin email](images/invio_admin.png)
+![admin email](images/invio_adm.png)
 
 
 
