@@ -97,7 +97,7 @@ Code:
 
 Email to buyer:
 
-![buyer email](images/email_buyer.png)
+![buyer email](images/invio_adm.png)
 
 
 
@@ -105,7 +105,7 @@ Email to buyer:
 
 Email to administrator:
 
-![admin email](images/invio_adm.png)
+![admin email](images/invio_admin.png)
 
 <hr style="border:3px solid #AEC6CF;">
 ### Kontakt:  
@@ -232,7 +232,7 @@ Fragmenty kodu:
 
 Email do buyera:
 
-![buyer email](images/email_buyer.png)
+![buyer email](images/invio_adm.png)
 
 
 
@@ -241,7 +241,7 @@ Email do buyera:
 Email dla administratora:
 
 
-![admin email](images/invio_adm.png)
+![admin email](images/invio_admin.png)
 
 
 
