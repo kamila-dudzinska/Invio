@@ -75,17 +75,17 @@ Sample code fragments and screenshots of emails and reports.
 
 Charts with purchase orders:
 
-![zamowienia](po_invio.png)
+![zamowienia](images/po_invio.png)
 
 
 Chart with invioices:
 
-![faktury](invoices_invio.png)
+![faktury](images/invoices_invio.png)
 
 
 Code:
 
-![data_cleaning](invio_data.png)
+![data_cleaning](images/invio_data.png)
 
 
 
@@ -97,7 +97,7 @@ Code:
 
 Email to buyer:
 
-![buyer email](email_buyer.png)
+![buyer email](images/email_buyer.png)
 
 
 
@@ -105,7 +105,7 @@ Email to buyer:
 
 Email to administrator:
 
-![admin email](invio_admin.png)
+![admin email](images/invio_admin.png)
 
 <hr style="border:3px solid #AEC6CF;">
 ### Kontakt:  
@@ -210,21 +210,21 @@ Przykładowe fragmenty kodu oraz screen z maila i raportów.
 
 Tabela z zamówieniami:
 
-![zamowienia](po_invio.png)
+![zamowienia](images/po_invio.png)
 
 
 Tabela z fakturami:
 
-![faktury](invoices_invio.png)
+![faktury](images/invoices_invio.png)
 
 
 Fragmenty kodu:
 
-![data_cleaning](invio_data.png)
+![data_cleaning](images/invio_data.png)
 
 
 
-![main](main_main.png)
+![main](images/main_main.png)
 
 
 
@@ -232,7 +232,7 @@ Fragmenty kodu:
 
 Email do buyera:
 
-![buyer email](email_buyer.png)
+![buyer email](images/email_buyer.png)
 
 
 
@@ -241,7 +241,7 @@ Email do buyera:
 Email dla administratora:
 
 
-![admin email](invio_admin.png)
+![admin email](images/invio_admin.png)
 
 
 
