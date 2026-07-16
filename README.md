@@ -108,7 +108,9 @@ Email to administrator:
 ![admin email](images/invio_admin.png)
 
 <hr style="border:3px solid #AEC6CF;">
-### Kontakt:  
+
+###  Kontakt:  
+
 
 [![Kamila Dudzińska](https://img.shields.io/badge/Kamila%20Dudzińska-ff69b4?style=for-the-badge)](mailto:kamila.dudzinska@onet.pl)
 [![Email](https://img.shields.io/badge/Email-555555?style=for-the-badge)](mailto:kamila.dudzinska@onet.pl)
@@ -246,7 +248,9 @@ Email dla administratora:
 
 
 <hr style="border:3px solid #AEC6CF;">
-### Kontakt:  
+
+###  Kontakt:
+
 
 [![Kamila Dudzińska](https://img.shields.io/badge/Kamila%20Dudzińska-ff69b4?style=for-the-badge)](mailto:kamila.dudzinska@onet.pl)
 [![Email](https://img.shields.io/badge/Email-555555?style=for-the-badge)](mailto:kamila.dudzinska@onet.pl)
