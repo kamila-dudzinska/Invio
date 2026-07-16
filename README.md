@@ -109,7 +109,7 @@ Email to administrator:
 
 <hr style="border:3px solid #AEC6CF;">
 
-###  Kontakt:  
+###  Contact:  
 
 
 [![Kamila Dudzińska](https://img.shields.io/badge/Kamila%20Dudzińska-ff69b4?style=for-the-badge)](mailto:kamila.dudzinska@onet.pl)
