@@ -180,7 +180,7 @@ Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i
 
 
 
-🗂️ Struktura projektu
+🗂️ Struktura projektu:
 
 -->invio_g.py — główny program automatyzujący analizę i wysyłkę maili
 
@@ -189,7 +189,7 @@ Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i
 -->procurement_mock_functions.py — moduł wspierający logikę danych
 
 
-⚙️ Instalacja i uruchomienie
+⚙️ Instalacja i uruchomienie:
 
 🔧 Wymagania
 
