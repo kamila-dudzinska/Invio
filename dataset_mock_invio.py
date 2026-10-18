@@ -18,7 +18,10 @@ Goal:   script created for procurement specialist and expert, who want to train
 import random
 from datetime import datetime, timedelta
 import openpyxl
-import procurement_mock_functions as pmf
+import pandas as pd                                                         
+from procurement_mock_functions_g import (weighted_choice, generate_po_number,
+    generate_delivery_date, generate_invoice_date, calculate_invoice_amount,
+    get_order_status, generate_invoice_number)                              
 
 
 # %%
