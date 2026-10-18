@@ -11,7 +11,7 @@ Technologies: Python, Pandas, Outlook, Excel
 
 Modules: pandas, win32com, datetime, reportlab, random
 
-Source: procurement_mock_dataset_invio.xlsx — created based on my own script “dataset_mock_invio.py”
+Source: procurement_mock_dataset_invio.xlsx — created based on my own script “dataset_mock_inv.py”
 
 
 
@@ -133,7 +133,7 @@ Technologie: Python, Pandas, Outlook, Excel
 
 Moduły: pandas, win32com, datetime, reportlab, random# Invio
 
-Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu "dataset_mock_invio.py"
+Źródło: procurement_mock_dataset_invio.xlsx - stworzony na podstawie własnego skryptu "dataset_mock_inv.py"
 
 
 📁 Jak uruchomić?
