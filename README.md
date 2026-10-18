@@ -65,9 +65,9 @@ After completing the task, the program informs the administrator how many emails
 
 📦 How to run?
 
-In the cataloque:
-
-pip install pandas reportlab pywin32
+pip install -r requirements.txt
+python dataset_mock_invio.py
+python invio_g.py
 
 
 Sample code fragments and screenshots of emails and reports.
@@ -140,7 +140,7 @@ Moduły: pandas, win32com, datetime, reportlab, random# Invio
 
 Sklonuj repozytorium.
 Zainstaluj moduły pip install -r requirements.txt
-Uruchom skrypt
+Uruchom skrypt: najpierw python dataset_mock_invio.py i potem python invio_g.py
 
 
 🎯 Cel projektu
