@@ -85,7 +85,7 @@ Chart with invioices:
 
 Code:
 
-![data_cleaning](images/invio_data.png)
+![functions](images/invio_1.png)
 
 
 
@@ -222,8 +222,7 @@ Tabela z fakturami:
 
 Fragmenty kodu:
 
-![data_cleaning](images/invio_data.png)
-
+![functions](images/invio_1.png)
 
 
 ![main](images/invio_main.png)
