@@ -22,8 +22,6 @@ Module with functions
 # IMPORT MODULES
 import random
 from datetime import datetime, timedelta
-import openpyxl
-import procurement_mock_functions
 
 
 # FUNCTIONS
