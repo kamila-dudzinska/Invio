@@ -11,8 +11,7 @@ Technologies: Python, Pandas, Outlook, Excel
 
 Modules: pandas, win32com, datetime, reportlab, random
 
-Source: procurement_mock_dataset_invio.xlsx — created based on my own script “dataset_mock_inv.py”
-
+Source: procurement_mock_dataset_inv.xlsx — created with my own script “dataset_mock_invio.py” (sheets: Ariba + Invoices, 2500 records)
 
 
 
@@ -22,18 +21,33 @@ The Invio program automates the analysis of procurement data and the sending of 
 
 
 
-
-
 💱 How the program works:
 
-The program analyzes the purchase order table and the invoice table, comparing statuses and net values.
+--> Invio merges the purchase order table (Ariba) with the invoice table by PO number.
 
-The program iterates row by row through the purchase order table and compares the data with the invoice report.
-If it finds a Purchase Order (PO) with the status “received” in the Ariba report and with the status “hold” in the Invoice table, it additionally checks the net amounts.
-If the net amount difference is greater than 20 EUR or 5% of the PO value, the program sends an email to the buyer requesting clarification of the differences.
-After completing the task, the program informs the administrator how many emails were sent — in the active IDE console — and additionally sends a PDF report with statistics to the administrator’s email.
+--> It looks for POs with the status “received” in Ariba and the status “hold” in the invoice table.
+
+--> For these POs it calculates the net amount difference — in value and in % of the PO amount.
+
+--> If the difference is greater than 20 (in PO currency) or 5% of the PO value, the requestor gets an email with the PO number, both amounts and the difference.
+
+--> The administrator gets a visual PDF report with statistics.
+
+--> Safe test mode: DRY_RUN = True opens only 3 email previews, nothing is sent.
 
 
+
+📊 Report contains:
+
+--> KPI: PO with invoice, received POs with invoice on hold, POs out of tolerance, emails created
+
+--> Invoice status – all statuses
+
+--> Price mismatch – direction (invoice above / below PO) and size of the difference (%)
+
+--> Net difference to clarify – per currency
+
+--> requestors_with_max_mismatches – top 5 requestors with the highest number of price mismatches
 
 
 
@@ -60,15 +74,17 @@ After completing the task, the program informs the administrator how many emails
 
 --> dataset_mock_invio.py — test data generator
 
---> procurement_mock_functions.py — module supporting data logic
+--> procurement_mock_functions_g.py — module supporting data logic
 
 
 📦 How to run?
 
+```python -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 python dataset_mock_invio.py
 python invio_g.py
-
+```
 
 Sample code fragments and screenshots of emails and reports.
 
@@ -83,29 +99,29 @@ Chart with invioices:
 ![faktury](images/invoices_invio.png)
 
 
-Code:
+Code - function for generate invoice number:
 
 ![functions](images/invio_1.png)
 
 
-
+Code - Data Load & Clean & Merge:
 ![main](images/invio_main.png)
 
 
+Code - Invio main:
+![main_stat](images/main_stat.png)
 
 
 
 Email to buyer:
 
-![buyer email](images/invio_adm.png)
-
-
+![buyer email](images/email_buyer.png)
 
 
 
 Email to administrator:
 
-![admin email](images/invio_admin.png)
+![admin email](images/admin_email.png)
 
 <hr style="border:3px solid #AEC6CF;">
 
@@ -140,7 +156,7 @@ Moduły: pandas, win32com, datetime, reportlab, random# Invio
 
 Sklonuj repozytorium.
 Zainstaluj moduły pip install -r requirements.txt
-Uruchom skrypt: najpierw python dataset_mock_invio.py i potem python invio_g.py
+Uruchom skrypt: najpierw python dataset_mock_invio_g.py i potem python invio_g.py
 
 
 🎯 Cel projektu
@@ -197,7 +213,7 @@ Python 3.10+
 
 Zainstalowany Outlook (dla wysyłki maili) oraz opcjonalnie Excel do odczytu csv
 
-Biblioteki: pandas, reportlab, win32com, os, datetime
+Biblioteki: pandas, reportlab, win32com
 
 
 📦 Instalacja
@@ -220,29 +236,30 @@ Tabela z fakturami:
 ![faktury](images/invoices_invio.png)
 
 
-Fragmenty kodu:
+
+Kod - funkcja generująca numer faktury:
 
 ![functions](images/invio_1.png)
 
 
+Kod - ładowanie, scalanie i czyszczenie danych:
 ![main](images/invio_main.png)
 
 
+Code - Invio main:
+![main_stat](images/main_stat.png)
 
 
 
-Email do buyera:
+Mail do kupca (buyera/requestora):
 
-![buyer email](images/invio_adm.png)
-
-
+![buyer email](images/email_buyer.png)
 
 
 
-Email dla administratora:
+Mail do administratora
 
-
-![admin email](images/invio_admin.png)
+![admin email](images/admin_email.png)
 
 
 
