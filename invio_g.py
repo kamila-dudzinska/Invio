@@ -30,7 +30,7 @@ try:
     import win32com.client
     OUTLOOK_AVAILABLE = True
 except ImportError:
-    OUTLOOK_AVAILABLE = False   # no Outlook (e.g. Mac/Linux) -> dry run
+    OUTLOOK_AVAILABLE = False   # no Outlook -> dry run
 
 
 # SETTINGS
@@ -39,9 +39,9 @@ FILE_PATH = os.path.join(BASE_DIR, "procurement_mock_dataset_inv.xlsx")
 PDF_FILE = os.path.join(BASE_DIR, "Statistics.pdf")
 ADMIN_EMAIL = "admin@test.com"
 TOLERANCE_PCT = 0.05    # 5% of the PO amount
-TOLERANCE_ABS = 20      # 20 in PO currency (simplification: no FX rates)
-DRY_RUN = True          # True = only MAX_PREVIEW email previews, nothing is sent
-MAX_PREVIEW = 3         # max. Outlook windows to open in test mode
+TOLERANCE_ABS = 20      # 20 in PO currency (simplification, no rates)
+DRY_RUN = True          # True = only MAX_PREVIEW email show, not sending
+MAX_PREVIEW = 3         # preview window number
 
 def divide_z(a: float, b: float) -> float:
     """Safe division - returns 0 instead of an error when b is 0."""
@@ -64,9 +64,9 @@ df['Invoice Status'] = df['Invoice Status'].astype(str)
 df['Invoice Amount'] = df['Invoice Amount'].astype(float)
 df['Amount'] = df['Amount'].astype(float)
 
-# PRICE MISMATCH CHECK V (vectorised - no row-by-row comparison)
+# PRICE MISMATCH CHECK V (record compared)
 df['Difference'] = (df['Invoice Amount'] - df['Amount']).round(2)
-df['Difference %'] = (df['Difference'].abs() / df['Amount']).round(4)
+df['Difference %'] = (df['Difference'].abs() / df['Amount']).round(2)
 
 on_hold = (df['Order Status'] == "received") & (df['Invoice Status'] == "hold")
 out_of_tolerance = (df['Difference'].abs() > TOLERANCE_ABS) | \
@@ -100,7 +100,7 @@ Invio
         mail_item.Subject = f"Price mismatch to check {row['PO Number']}"
         mail_item.Body = body
         if DRY_RUN:
-            mail_item.Display()     # test mode: preview only
+            mail_item.Display()     # test mode - preview only - not sending!
         else:
             mail_item.Send()
         emails_sent += 1
@@ -126,7 +126,7 @@ diff_size = pd.cut(to_clarify['Difference %'],
                    labels=["up to 5% (above 20 abs)", "5-10%", "10-25%", "over 25%"])
 diff_size_counts = diff_size.value_counts().sort_index()
 
-# net difference to clarify per currency (absolute values)
+# net difference to clarify per currency
 difference_value = (to_clarify.assign(abs_diff=to_clarify['Difference'].abs())
                     .groupby('Currency')['abs_diff'].sum()
                     .sort_values(ascending=False))
@@ -137,7 +137,7 @@ requestors_with_max_mismatches = (to_clarify.groupby('Requester Name').size()
                                   .head(5))
 
 # ADMIN PART - PDF REPORT IX
-# font with Polish letters (Windows Arial), Helvetica as a fallback
+# fonts Helvetica
 FONT, FONT_BOLD = "Helvetica", "Helvetica-Bold"
 for regular, bold in [(r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\arialbd.ttf"),
                       ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -150,7 +150,7 @@ for regular, bold in [(r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\arialbd
 
 c = canvas.Canvas(PDF_FILE, pagesize=A4)
 width, height = A4
-PLUM = colors.HexColor("#5B1A5B")     # Invio colour (Mobi is navy)
+PLUM = colors.HexColor("#5B1A5B")     # Invio colour - plum :)
 LILAC = colors.HexColor("#EBD7F0")
 GREY = colors.HexColor("#6B7280")
 
