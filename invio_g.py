@@ -1,5 +1,6 @@
 """
 Created on Sat Jun 27 18:02:37 2026
+Extenden on Wed Oct 21  13:59:20 2026
 
 @author: Kamila Dudzińska
 
@@ -20,7 +21,10 @@ import os
 from datetime import datetime
 import pandas as pd
 from reportlab.lib.pagesizes import A4
+from reportlab.lib import colors
 from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 try:
     import win32com.client
@@ -36,8 +40,8 @@ PDF_FILE = os.path.join(BASE_DIR, "Statistics.pdf")
 ADMIN_EMAIL = "admin@test.com"
 TOLERANCE_PCT = 0.05    # 5% of the PO amount
 TOLERANCE_ABS = 20      # 20 in PO currency (simplification: no FX rates)
-DRY_RUN = True          # True = only print, no Outlook windows               
-MAX_PREVIEW = 3         # max. Outlook windows to open in test mode           
+DRY_RUN = True          # True = only MAX_PREVIEW email previews, nothing is sent
+MAX_PREVIEW = 3         # max. Outlook windows to open in test mode
 
 def divide_z(a: float, b: float) -> float:
     """Safe division - returns 0 instead of an error when b is 0."""
@@ -70,7 +74,7 @@ out_of_tolerance = (df['Difference'].abs() > TOLERANCE_ABS) | \
 to_clarify = df[on_hold & out_of_tolerance]
 
 # OUTLOOK VI
-outlook = win32com.client.Dispatch("Outlook.Application") if (OUTLOOK_AVAILABLE and not DRY_RUN) else None   
+outlook = win32com.client.Dispatch("Outlook.Application") if OUTLOOK_AVAILABLE else None
 
 emails_sent = 0     # number of prepared emails
 
@@ -84,52 +88,163 @@ Invoice amount: {row['Invoice Amount']:.2f} {row['Currency']}
 Difference: {row['Difference']:.2f} {row['Currency']} ({row['Difference %']:.1%})
 
 Could you please check and clarify why the difference exceeds the tolerance level?
+
+Thank you in advance!
+
+Have a great day! :)
+Invio
 """
-    if outlook and emails_sent < MAX_PREVIEW:                                 
+    if outlook and (not DRY_RUN or emails_sent < MAX_PREVIEW):
         mail_item = outlook.CreateItem(0)
         mail_item.To = row['Requester Mail']
         mail_item.Subject = f"Price mismatch to check {row['PO Number']}"
         mail_item.Body = body
-        mail_item.Display()     # Display = test mode, change to Send() in production
-    emails_sent += 1
-    print(f"Email prepared for {row['Requester Mail']} (PO {row['PO Number']})")
+        if DRY_RUN:
+            mail_item.Display()     # test mode: preview only
+        else:
+            mail_item.Send()
+        emails_sent += 1
+        print(f"Email created for {row['Requester Mail']} (PO {row['PO Number']})")
+    else:
+        print(f"[dry run] {row['Requester Mail']} (PO {row['PO Number']})")
 
 
-# DATA PREPARATION FOR REPORT VIII
-ordered_count = int((df['Order Status'] == "ordered").sum())
-received_count = int((df['Order Status'] == "received").sum())
-total = ordered_count + received_count
+# STATISTICS VIII
+today = datetime.today()
+po_matched = len(df)                          # POs with an invoice
+po_on_hold = int(on_hold.sum())               # received + invoice on hold
+po_to_clarify = len(to_clarify)               # on hold + out of tolerance
+invoice_status_counts = df['Invoice Status'].value_counts()
 
-percentage_ordered = divide_z(ordered_count, total) * 100
-percentage_received = divide_z(received_count, total) * 100
-today = datetime.today().strftime("%d-%m-%Y")
+# overbilling vs underbilling
+invoice_above_po = int((to_clarify['Difference'] > 0).sum())
+invoice_below_po = int((to_clarify['Difference'] < 0).sum())
 
-# ADMIN PART IX
+# size of the difference (% of PO amount)
+diff_size = pd.cut(to_clarify['Difference %'],
+                   bins=[0, 0.05, 0.10, 0.25, float('inf')],
+                   labels=["up to 5% (above 20 abs)", "5-10%", "10-25%", "over 25%"])
+diff_size_counts = diff_size.value_counts().sort_index()
+
+# net difference to clarify per currency (absolute values)
+difference_value = (to_clarify.assign(abs_diff=to_clarify['Difference'].abs())
+                    .groupby('Currency')['abs_diff'].sum()
+                    .sort_values(ascending=False))
+
+# requestors with the most price mismatches
+requestors_with_max_mismatches = (to_clarify.groupby('Requester Name').size()
+                                  .sort_values(ascending=False)
+                                  .head(5))
+
+# ADMIN PART - PDF REPORT IX
+# font with Polish letters (Windows Arial), Helvetica as a fallback
+FONT, FONT_BOLD = "Helvetica", "Helvetica-Bold"
+for regular, bold in [(r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\arialbd.ttf"),
+                      ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+                       "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")]:
+    if os.path.exists(regular) and os.path.exists(bold):
+        pdfmetrics.registerFont(TTFont("ReportFont", regular))
+        pdfmetrics.registerFont(TTFont("ReportFont-Bold", bold))
+        FONT, FONT_BOLD = "ReportFont", "ReportFont-Bold"
+        break
+
 c = canvas.Canvas(PDF_FILE, pagesize=A4)
+width, height = A4
+PLUM = colors.HexColor("#5B1A5B")     # Invio colour (Mobi is navy)
+LILAC = colors.HexColor("#EBD7F0")
+GREY = colors.HexColor("#6B7280")
 
-# title
-y = 720
-c.setFont("Helvetica-Bold", 14)
-c.setFillColorRGB(0.5, 0.08, 0.5)
-c.drawString(100, y, "Report of PO status")
-c.setLineWidth(1)
-c.line(100, y - 2, 100 + 250, y - 3)
 
-# report
-text = c.beginText(100, y - 50)
-text.setFont("Helvetica", 12)
-c.setFillColorRGB(0, 0, 0)
-text.setLeading(30)
+def section_title(y, title):
+    c.setFillColor(PLUM)
+    c.setFont(FONT_BOLD, 13)
+    c.drawString(50, y, title)
+    c.setStrokeColor(LILAC)
+    c.setLineWidth(2)
+    c.line(50, y - 6, width - 50, y - 6)
 
-text.textLine(f"POs with the status 'ordered': {ordered_count}")
-text.textLine(f"POs with the status 'received': {received_count}")
-text.textLine(f"Received POs on hold with a price mismatch above tolerance: {emails_sent}")
-text.textLine(f"POs in the report (ordered + received): {total}")
-text.textLine(f"Share of 'ordered': {percentage_ordered:.2f} %")
-text.textLine(f"Share of 'received': {percentage_received:.2f} %")
-text.textLine(f"On {today} Invio prepared {emails_sent} emails.")
 
-c.drawText(text)
+def draw_bar(y, label, count, share, bar_max=260):
+    """One row: label, grey background bar, plum bar for the share, number."""
+    c.setFont(FONT, 10)
+    c.setFillColor(colors.black)
+    c.drawString(50, y + 3, label)
+    c.setFillColor(colors.HexColor("#E5E7EB"))
+    c.rect(185, y, bar_max, 13, stroke=0, fill=1)
+    c.setFillColor(PLUM)
+    c.rect(185, y, bar_max * share / 100, 13, stroke=0, fill=1)
+    c.setFillColor(colors.black)
+    c.drawString(185 + bar_max + 10, y + 3, f"{count:,}  ({share:.1f}%)")
+
+
+# header bar
+c.setFillColor(PLUM)
+c.rect(0, height - 90, width, 90, stroke=0, fill=1)
+c.setFillColor(colors.white)
+c.setFont(FONT_BOLD, 22)
+c.drawString(50, height - 50, "Invio - Price Mismatch Report")
+c.setFont(FONT, 11)
+c.drawString(50, height - 72, f"Generated: {today:%Y-%m-%d %H:%M}")
+
+# KPI tiles
+tiles = [("PO with invoice", po_matched),
+         ("Received, invoice on hold", po_on_hold),
+         ("Out of tolerance", po_to_clarify),
+         ("Emails created", emails_sent)]
+tile_w, tile_h, gap = 115, 70, 12
+y_tiles = height - 190
+for i, (label, value) in enumerate(tiles):
+    x = 50 + i * (tile_w + gap)
+    c.setFillColor(LILAC)
+    c.roundRect(x, y_tiles, tile_w, tile_h, 8, stroke=0, fill=1)
+    c.setFillColor(PLUM)
+    c.setFont(FONT_BOLD, 22)
+    c.drawCentredString(x + tile_w / 2, y_tiles + 32, f"{value:,}")
+    c.setFont(FONT, 8.5)
+    c.setFillColor(GREY)
+    c.drawCentredString(x + tile_w / 2, y_tiles + 14, label)
+
+# 1. invoice status - all invoices
+y = y_tiles - 40
+section_title(y, "Invoice status (all invoices)")
+y -= 10
+for status, count in invoice_status_counts.items():
+    y -= 19
+    draw_bar(y, status.capitalize(), count, divide_z(int(count), po_matched) * 100)
+
+# 2. overbilling vs underbilling + size of the difference
+y -= 32
+section_title(y, "Price mismatch - direction and size")
+y -= 10
+for label, count in [("Invoice above PO", invoice_above_po),
+                     ("Invoice below PO", invoice_below_po)] + list(diff_size_counts.items()):
+    y -= 19
+    draw_bar(y, label, count, divide_z(int(count), po_to_clarify) * 100)
+
+# 3. difference value per currency
+y -= 32
+section_title(y, "Net difference to clarify per currency")
+y -= 10
+for currency, amount in difference_value.items():
+    y -= 17
+    c.setFont(FONT, 10)
+    c.setFillColor(colors.black)
+    c.drawString(50, y, currency)
+    c.drawRightString(260, y, f"{amount:,.2f}")
+
+# 4. requestors with max mismatches
+y -= 32
+section_title(y, "Requestors with max mismatches")
+y -= 10
+for rank, (name, count) in enumerate(requestors_with_max_mismatches.items(), start=1):
+    y -= 19
+    draw_bar(y, f"{rank}. {name}", count, divide_z(int(count), po_to_clarify) * 100)
+
+# footer
+c.setFont(FONT, 8)
+c.setFillColor(GREY)
+c.drawString(50, 30, f"Rule: PO 'received', invoice 'hold', difference above {TOLERANCE_ABS} "
+                     f"or {TOLERANCE_PCT:.0%} of the PO amount. | Invio by Kamila Dudzińska")
 c.save()
 
 print(f"PDF report saved: {PDF_FILE}")
@@ -138,16 +253,21 @@ print(f"PDF report saved: {PDF_FILE}")
 if outlook:
     report_mail = outlook.CreateItem(0)
     report_mail.To = ADMIN_EMAIL
-    report_mail.Subject = "Daily report of PO status"
+    report_mail.Subject = "Daily price mismatch report"
     report_mail.Body = f"""Hello Admin,
 
-here is the report of the PO status. Invio prepared {emails_sent} emails
-to requesters and asked them to clarify the price differences.
+here is today's price mismatch report.
+Invio found {po_to_clarify} received PO(s) with an invoice on hold and a price
+difference above tolerance, and asked the requestors to clarify them.
+Details are in the attached PDF.
 
 Invio wishes you a great day! :)
 """
     report_mail.Attachments.Add(PDF_FILE)
-    report_mail.Display()       # change to Send() in production
+    if DRY_RUN:
+        report_mail.Display()   # test mode: preview only
+    else:
+        report_mail.Send()
     print(f"Email to admin {ADMIN_EMAIL} prepared.")
 else:
-    print("Outlook not available - dry run, no emails were created.")
+    print("Outlook not available - admin email not created.")
