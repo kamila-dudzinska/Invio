@@ -1,6 +1,7 @@
 """
 Created on Sat Jun 27 18:02:37 2026
-Extenden on Wed Oct 21  13:59:20 2026
+Extended on Wed Oct 21  13:59:20 2026
+Extended on Wed Oct 29  21:50:34 2026
 
 @author: Kamila Dudzińska
 
@@ -41,7 +42,7 @@ ADMIN_EMAIL = "admin@test.com"
 TOLERANCE_PCT = 0.05    # 5% of the PO amount
 TOLERANCE_ABS = 20      # 20 in PO currency (simplification, no rates)
 DRY_RUN = True          # True = only MAX_PREVIEW email show, not sending
-MAX_PREVIEW = 3         # preview window number
+MAX_PREVIEW = 1         # preview window number
 
 def divide_z(a: float, b: float) -> float:
     """Safe division - returns 0 instead of an error when b is 0."""
@@ -137,20 +138,20 @@ requestors_with_max_mismatches = (to_clarify.groupby('Requester Name').size()
                                   .head(5))
 
 # ADMIN PART - PDF REPORT IX
-# fonts Helvetica
+# fonts: Calibri or Arial
 FONT, FONT_BOLD = "Helvetica", "Helvetica-Bold"
-for regular, bold in [(r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\arialbd.ttf"),
-                      ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-                       "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")]:
+for regular, bold in [(r"C:\Windows\Fonts\calibri.ttf", r"C:\Windows\Fonts\calibrib.ttf"),
+                      (r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\arialbd.ttf")]:
+    #only if both fonts exists
     if os.path.exists(regular) and os.path.exists(bold):
         pdfmetrics.registerFont(TTFont("ReportFont", regular))
         pdfmetrics.registerFont(TTFont("ReportFont-Bold", bold))
         FONT, FONT_BOLD = "ReportFont", "ReportFont-Bold"
-        break
+        break   # choose first font (opt.)
 
 c = canvas.Canvas(PDF_FILE, pagesize=A4)
 width, height = A4
-PLUM = colors.HexColor("#5B1A5B")     # Invio colour - plum :)
+PLUM = colors.HexColor("#5B1A5B")     # Invio colour - plum (Śliwka!) :)
 LILAC = colors.HexColor("#EBD7F0")
 GREY = colors.HexColor("#6B7280")
 
