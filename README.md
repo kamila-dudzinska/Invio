@@ -23,17 +23,14 @@ The Invio program automates the analysis of procurement data and the sending of 
 
 💱 How the program works:
 
---> Invio merges the purchase order table (Ariba) with the invoice table by PO number.
-
---> It looks for POs with the status “received” in Ariba and the status “hold” in the invoice table.
-
---> For these POs it calculates the net amount difference — in value and in % of the PO amount.
-
---> If the difference is greater than 20 (in PO currency) or 5% of the PO value, the requestor gets an email with the PO number, both amounts and the difference.
-
---> The administrator gets a visual PDF report with statistics.
-
---> Safe test mode: DRY_RUN = True opens only 3 email previews, nothing is sent.
+1. Invio merges the purchase order table (Ariba) with the invoice table by PO number.
+2. It looks for POs with the status “received” in Ariba and the status “hold” in the invoice table.
+3. For these POs it calculates the net amount difference — in value and in % of the PO amount.
+4. If the difference is greater than 20 (in PO currency) or 5% of the PO value, the requestor gets an email with the PO number, both amounts and the difference.
+5. The administrator gets a visual PDF report with statistics.
+6. Safe test mode: DRY_RUN = True opens only 1 email for a preview, nothing is sent.
+7. The PDF report uses the Calibri font (or Arial as a backup), so Polish characters (ł, ń, ś...) are displayed correctly, the same look as in my Mobi project. (extended 29.10.2026)
+8. Test data uses @example.com email addresses (a domain reserved for testing), so no real person can receive an email. (extended 29.10.2026)
 
 
 
@@ -121,7 +118,7 @@ Email to buyer:
 
 Email to administrator:
 
-![admin email](images/admin_email.png)
+![admin email](admin_email.png)
 
 <hr style="border:3px solid #AEC6CF;">
 
@@ -173,7 +170,9 @@ Program analizuje tabelę zamówień oraz tabelę faktur, porównując statusy i
 1. Program iteruje wiersz po wierszu w tabeli za zamówieniami i porównuje dane z raportem z tabeli z fakturami. 
 2. Jeśli znajdzie zamówienie (PO) ze statusem "received" ("otrzymane") w raporcie "Ariba" oraz ze statusem"hold" w tabeli "Faktury" to sprawdzi dodatkowo kwoty netto.
 3. Jeżeli różnica kwot netto będzie większa niż 20 EUR lub 5% wartości zamówienia to program wyśle maila do kupca z prośbą o wyjaśnienie różnic. 
-4. Po wykonaniu zadania program poinformuje administratora, ile maili zostało wysłanych - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora.
+4. Po wykonaniu zadania program poinformuje administratora, ile maili zostało wysłanych - w przypadku aktywnej konsoli IDE oraz dodatkowo wyśle raport ze statystykami w formacie pdf na maila administratora. 
+5. Raport PDF korzysta z czcionki Calibri (zapasowo Arial), dzięki czemu polskie znaki (ł, ń, ś...) wyświetlają się poprawnie, tak samo jak w projekcie Mobi. (extended 29.10.2026)
+6. Dane testowe mają adresy @example.com (domena zarezerwowana do testów), więc żaden mail nie trafi do prawdziwej osoby. (extended 29.10.2026)
    
 
 
